@@ -1,0 +1,11 @@
+@import '_variables';
+
+:host {
+  display: flex;
+}
+
+.header {
+  background-color: $color-primary;
+  flex: 1;
+  height: 60px;
+}

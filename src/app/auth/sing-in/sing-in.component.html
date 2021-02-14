@@ -1,0 +1,45 @@
+<section class="section-auth">
+
+
+  <div class="auth">
+    <div class="auth__logo logo"></div>
+
+    <h1 class="heading-primary">Sign in</h1>
+
+    <form class="auth__form form" [formGroup]="form">
+
+      <div class="form__control control">
+        <label class="control__label" for="name">E-mail address</label>
+        <input
+          class="control__input input"
+          [class.input--invalid]="showEmailError"
+          id="email"
+          type="email"
+          formControlName="email"
+        >
+        <span *ngIf="showEmailError" class="validation-error">Invalid email address</span>
+      </div>
+
+      <div class="form__control control">
+        <label class="control__label" for="name">Password</label>
+        <input
+          class="control__input input"
+          id="password"
+          type="password"
+          formControlName="password"
+        >
+      </div>
+
+      <button
+        class="form__button button"
+        type="submit"
+        [disabled]="!form.valid"
+        (click)="onSubmit()">Continue</button>
+
+    </form>
+
+    <h6 class="auth__info info">Not our member yet? <a [routerLink]="['', 'auth', 'sign-up']">Click here to create new account!</a></h6>
+  </div>
+
+
+</section>

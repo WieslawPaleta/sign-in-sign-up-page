@@ -1,0 +1,11 @@
+@import '_mixins';
+
+:host {
+  @extend %flex-area;
+  min-height: calc(100vh);
+
+}
+
+app-main {
+  height: 100%;
+}

@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(37.5em) { // 600
+      font-size: 55%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}

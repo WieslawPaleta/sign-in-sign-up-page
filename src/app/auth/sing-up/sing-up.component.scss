@@ -1,0 +1,6 @@
+@import '_mixins';
+
+:host {
+  @extend %flex-area;
+  align-items: center;
+}

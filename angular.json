@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "33f66bbe-afb2-4026-b1d6-77842ccaefdd"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -25,6 +28,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/"
+              ]
+            },
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -68,7 +76,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sign-in-sign-up-page:build"
+            "browserTarget": "sign-in-sign-up-page:build",
+
           },
           "configurations": {
             "production": {
@@ -89,6 +98,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/"
+              ]
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets"

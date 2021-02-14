@@ -1,0 +1,17 @@
+@import '_variables';
+
+:host {
+  display: flex;
+}
+
+.footer {
+  background-color: $color-primary-dark;
+
+  flex: 1;
+  height: 60px;
+
+  &__time {
+    color: $color-white;
+    padding: 10px
+  }
+}

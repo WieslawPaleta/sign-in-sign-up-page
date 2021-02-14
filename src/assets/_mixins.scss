@@ -1,0 +1,19 @@
+
+@mixin respond($breakpoint) {
+    @media only screen and (max-width: $breakpoint) { @content };    //600px
+}
+
+@mixin respond2($breakpoint) {
+    @media only screen and (min-width: $breakpoint + .0625em ) { @content };    //600px
+}
+
+%flex-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+%flex-center {
+  justify-content: center;
+  align-items: center;
+}

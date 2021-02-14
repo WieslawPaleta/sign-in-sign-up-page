@@ -1,0 +1,82 @@
+<section class="section-auth">
+
+
+  <div class="auth">
+    <div class="auth__logo logo"></div>
+
+    <h1 class="heading-primary">Sign up</h1>
+
+    <form class="auth__form form" [formGroup]="form">
+
+      <div class="form__control control">
+        <label class="control__label" for="name">E-mail address</label>
+        <input
+          class="control__input input"
+          [class.input--invalid]="showEmailError"
+          id="email"
+          type="email"
+          formControlName="email"
+        >
+
+        <ng-container *ngIf="showEmailError">
+          <span *ngIf="emailCtrl?.errors?.required" class="validation-error">Email is required</span>
+          <span *ngIf="emailCtrl?.errors?.email" class="validation-error">Invalid email address</span>
+        </ng-container>
+      </div>
+
+      <div class="form__control control">
+        <label class="control__label" for="name">Full name</label>
+        <input
+          class="control__input input"
+          id="name"
+          type="text"
+          formControlName="name"
+        >
+        <ng-container *ngIf="showNameError">
+          <span *ngIf="nameCtrl?.errors?.required" class="validation-error">Full name is required</span>
+          <span *ngIf="nameCtrl?.errors?.missingLastName" class="validation-error">Missing last name</span>
+        </ng-container>
+      </div>
+
+      <div class="form__control control">
+        <label class="control__label" for="name">Password</label>
+        <input
+          class="control__input input"
+          id="password"
+          type="password"
+          formControlName="password"
+        >
+        <ng-container *ngIf="showPasswordError">
+          <span *ngIf="passwordCtrl?.errors?.required" class="validation-error">Password is required</span>
+          <span *ngIf="passwordCtrl?.errors?.minlength" class="validation-error">Password is too short</span>
+        </ng-container>
+      </div>
+
+      <div class="form__control control">
+        <label class="control__label" for="name">Confirm your password</label>
+        <input
+          class="control__input input"
+          id="password2"
+          type="password"
+          formControlName="passwordConfirmation"
+        >
+        <ng-container *ngIf="showPasswordConfirmationError">
+          <span *ngIf="passwordConfirmationCtrl?.errors?.required" class="validation-error">Please confirm your password</span>
+          <span *ngIf="passwordConfirmationCtrl?.errors?.minlength" class="validation-error">Password is too short</span>
+        </ng-container>
+        <span *ngIf="showNotTheSamePasswordsError" class="validation-error">Password must be the same</span>
+      </div>
+
+      <button
+        class="form__button button"
+        type="submit"
+        [disabled]="!form.valid"
+        (click)="onSubmit()">Continue</button>
+
+    </form>
+
+    <h6 class="auth__info info">Already using our app? <a [routerLink]="['', 'auth', 'sign-in']"><u>Click here to sign in</u></a></h6>
+  </div>
+
+
+</section>
